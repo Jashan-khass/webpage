@@ -1,0 +1,11 @@
+<button onclick="downloadNote()">Download Note</button>
+<script>
+  function downloadNote() {
+    const text = document.getElementById("note").value;
+    const blob = new Blob([text], { type: 'text/plain' });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "my_note.txt";
+    link.click();
+  }
+</script>
